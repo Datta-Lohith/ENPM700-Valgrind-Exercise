@@ -5,7 +5,9 @@ int main()
 {
     AnalogSensor lightSensor(5);
     std::cout << "Averaged sensor reading: " << lightSensor.Read() << std::endl;
-    bool terminator;
+
+    // Fixing the memory leak for uninitialized variable
+    bool terminator = true;
     if( terminator )
     {
         std::cout << "DONE" << std::endl;
